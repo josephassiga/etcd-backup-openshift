@@ -109,7 +109,7 @@ spec:
           terminationGracePeriodSeconds: 30
           activeDeadlineSeconds: 500
           dnsPolicy: "ClusterFirst"
-          serviceAccountName: "openshift-backup"
+          serviceAccountName: "openshift-etcd-backup"
           serviceAccount: "openshift-backup"
       
 ---
