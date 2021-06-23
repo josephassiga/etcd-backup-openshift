@@ -84,7 +84,7 @@ spec:
               command:
                 - "/bin/bash"
                 - "-c"
-                - oc get no -l node-role.kubernetes.io/master --no-headers -o name | grep -i master-0 | xargs -I {} --  oc debug {} -- bash -c 'chroot /host sudo -E /usr/local/bin/cluster-backup.sh /home/core/backup/'
+                - oc get no -l node-role.kubernetes.io/master --no-headers -o name | grep -i master-0 | xargs -I {} -- oc debug {} -- bash -c 'chroot /host  sudo -E mkdir -p /home/core/backup-etcd-c1-2/ && chroot /host  sudo -E  mount -t nfs x.x.x.x:/nfsShare/nfs-c1-2/etcd_backups /home/core/backup-etcd-c1-2/ && chroot /host sudo -E /usr/local/bin/cluster-backup.sh /home/core/backup-etcd-c1-2/'
           restartPolicy: "Never"
           terminationGracePeriodSeconds: 30
           activeDeadlineSeconds: 500
