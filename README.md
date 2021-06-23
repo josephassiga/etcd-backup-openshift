@@ -83,7 +83,7 @@ metadata:
   labels:
     app: openshift-etcd-backup
 spec:
-  schedule: "00 00 * * 5" # Chaque Vendredi à Minuit.
+  schedule: "00 00 * * 5" # Every Friday at Midnight. Change here if you want another schedule.
   concurrencyPolicy: Forbid
   successfulJobsHistoryLimit: 5
   failedJobsHistoryLimit: 5
